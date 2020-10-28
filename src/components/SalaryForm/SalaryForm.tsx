@@ -55,13 +55,10 @@ const SalaryFormWithReduxForm = reduxForm<FormData>({
   initialValues: formDataDefaults
 })(SalaryForm);
 
-function MapStateToProps(state: any): FormData {
-  return {
-    ...selector(state, 'rateType', 'excludeTax', 'amount')
-  }
-}
-
 const selector = formValueSelector(formName);
+function MapStateToProps(state: any): FormData {
+  return selector(state, 'rateType', 'excludeTax', 'amount');
+}
 const ConnectedSalaryForm = connect<FormData>(MapStateToProps)(SalaryFormWithReduxForm);
 
 export default ConnectedSalaryForm;
