@@ -6,6 +6,7 @@ import { change, formValueSelector } from "redux-form";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import { formName } from "../formName";
+import { formDataDefaults } from "../SalaryForm";
 
 const AmountLabel: { [key in RateType]: string } = {
   [RateType.RATE_MONTHLY]: '₽',
@@ -20,7 +21,7 @@ interface AmountInputProps {
   dispatch: Dispatch
 }
 
-const AmountInput = ({ input: { value, onChange }, rateType = RateType.RATE_MONTHLY, isAmountChanged = false, dispatch }: WrappedFieldProps & AmountInputProps) => {
+const AmountInput = ({ input: { value, onChange }, rateType = formDataDefaults.rateType, isAmountChanged = formDataDefaults.isAmountChanged, dispatch }: WrappedFieldProps & AmountInputProps) => {
   return (
     <Form.Group as={Row} className='mb-0 ml-2' controlId='salary-form__amount'>
       <Col xs='auto' className='p-0'>

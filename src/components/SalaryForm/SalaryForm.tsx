@@ -16,7 +16,14 @@ interface FormData {
   isAmountChanged?: boolean
 }
 
-const SalaryForm = ({ handleSubmit, rateType = RateType.RATE_MONTHLY, excludeTax = true, amount = 0 }: FormData & InjectedFormProps) => {
+export const formDataDefaults = {
+  rateType: RateType.RATE_MONTHLY,
+  excludeTax: true,
+  amount: 40000,
+  isAmountChanged: false,
+}
+
+const SalaryForm = ({ handleSubmit, rateType = formDataDefaults.rateType, excludeTax = formDataDefaults.excludeTax, amount = formDataDefaults.amount }: FormData & InjectedFormProps) => {
   const isMinimalRateType = rateType === RateType.RATE_MINIMAL;
   const isMonthlyRateType = rateType === RateType.RATE_MONTHLY;
   
@@ -45,12 +52,7 @@ const SalaryForm = ({ handleSubmit, rateType = RateType.RATE_MONTHLY, excludeTax
 
 const SalaryFormWithReduxForm = reduxForm<FormData>({
   form: 'salary',
-  initialValues: {
-    rateType: RateType.RATE_MONTHLY,
-    excludeTax: true,
-    amount: 40000,
-    isAmountChanged: false,
-  }
+  initialValues: formDataDefaults
 })(SalaryForm);
 
 function MapStateToProps(state: any): FormData {
