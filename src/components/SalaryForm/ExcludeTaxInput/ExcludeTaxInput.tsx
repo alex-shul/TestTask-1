@@ -25,7 +25,7 @@ const ExcludeTaxInput = ({ input: { value, onChange } }: WrappedFieldProps) => {
 
 ExcludeTaxInput.propTypes = {
   input: PropTypes.shape({
-    value: PropTypes.number,
+    value: PropTypes.bool,
     onChange: PropTypes.func.isRequired
   })
 };
