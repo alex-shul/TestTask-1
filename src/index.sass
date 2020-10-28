@@ -1,0 +1,102 @@
+@import './styles/var'
+
+$theme-colors: ("primary": $color-primary)
+
+@import '~bootstrap/scss/bootstrap'
+
+.form-group
+  padding-left: .7rem
+
+  .form-label.left-edge
+    margin-left: -.7rem
+
+  .form-label.small
+    font-size: .75rem
+    font-style: italic
+
+    &:not(.active)
+      color: grey
+
+.form-label,
+.form-check-label
+  font-weight: 700
+
+input[type='radio']:before
+  width: .8rem
+  height: .8rem
+  border-radius: .4rem
+  top: 0
+  left: 0
+  position: absolute
+  background-color: white
+  content: ''
+  display: inline-block
+  visibility: visible
+  border: .05rem solid grey
+  z-index: 1
+
+input[type='radio']:after
+  width: .5rem
+  height: .5rem
+  border-radius: .25rem
+  top: .15rem
+  left: .15rem
+  position: absolute
+  background-color: transparent
+  content: ''
+  display: inline-block
+  visibility: visible
+  border: none
+  z-index: 2
+  transition: background-color .3s ease-out
+
+input[type='radio']:checked:after
+  background-color: $color-font
+
+.form-control
+  border-radius: $input-height
+  font-weight: 700
+
+  &:focus
+    color: $color-font
+
+.custom-switch
+  .custom-control-input:checked ~ .custom-control-label::before
+    border-color: #F5A534
+    background-color: #F5A534
+
+.tooltip
+  top: .4rem !important
+  left: .5rem !important
+
+  &.show
+    opacity: 1 !important
+
+  .arrow
+    transform: translate(0, .2rem) !important
+
+    &::before
+      border-width: 0.8rem 0.8rem 0 0.8rem
+      border-bottom-color: transparent
+      border-left-color: $color-primary
+
+  .tooltip-inner
+    background-color: $color-primary
+    font-weight: 700
+    font-size: .8rem
+    border-radius: 0 !important
+
+.alert
+  border-radius: 0 !important
+  color: $color-font
+
+body
+  margin: 0
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  color: $color-font
+
+code
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace
+
