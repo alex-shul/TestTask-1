@@ -37,7 +37,7 @@ const Tips = ({ message }: TipsProps) => {
         placement="bottom-start"
       >
         {(props) => (
-          <Tooltip id="overlay-example" {...props}>
+          <Tooltip id="tips__overlay" {...props}>
             {message}
           </Tooltip>
         )}

@@ -16,7 +16,7 @@ interface FormData {
   isAmountChanged?: boolean
 }
 
-const SalaryForm = ({ handleSubmit, rateType = RateType.RATE_MONTHLY, excludeTax = false, amount = 0 }: FormData & InjectedFormProps) => {
+const SalaryForm = ({ handleSubmit, rateType = RateType.RATE_MONTHLY, excludeTax = true, amount = 0 }: FormData & InjectedFormProps) => {
   const isMinimalRateType = rateType === RateType.RATE_MINIMAL;
   const isMonthlyRateType = rateType === RateType.RATE_MONTHLY;
   
