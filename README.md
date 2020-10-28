@@ -2,8 +2,8 @@
 
 ![test task description](./testTask.png)
 
-Task: "Реализовать контрол, на основании макета
-react, typescript, sass, bootstrap, redux-form
+Task: "Реализовать контрол, на основании макета.
+react, typescript, sass, bootstrap, redux-form.
 pixel-perfect не требуется, но результат должен быть очень похожим на изображение"
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
