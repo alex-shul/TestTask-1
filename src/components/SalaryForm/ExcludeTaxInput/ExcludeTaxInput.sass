@@ -1,9 +1,18 @@
+@import '../../../styles/var'
+
 .contain-tax__label
   display: flex
   align-items: center
 
   .contain-tax__label-off
     margin-right: .5rem
+
+  .contain-tax__label-on,
+  .contain-tax__label-off
+    transition: color .3s ease-out
+
+    &.active
+      color: $color-font
 
   .custom-control
     margin-right: 0
