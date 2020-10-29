@@ -1,11 +1,11 @@
 import React from 'react';
-import { Col, Form, Row } from "react-bootstrap";
-import Tips from "../../Tips/Tips";
-import { WrappedFieldProps } from "redux-form/lib/Field";
-import { change, formValueSelector } from "redux-form";
-import { connect } from "react-redux";
-import { Dispatch } from "redux";
-import { formName } from "../formName";
+import { Col, Form, Row } from 'react-bootstrap';
+import Tips from '../../Tips/Tips';
+import { WrappedFieldProps } from 'redux-form/lib/Field';
+import { change, formValueSelector } from 'redux-form';
+import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
+import { formName } from '../formName';
 
 export enum RateType {
   RATE_MONTHLY,

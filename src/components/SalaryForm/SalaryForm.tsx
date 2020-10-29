@@ -2,10 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Alert, Row, Form } from 'react-bootstrap';
 import { Field, formValueSelector, InjectedFormProps, reduxForm } from 'redux-form'
-import RateTypeInput, { RateType } from "./RateTypeInput/RateTypeInput";
-import ExcludeTaxInput from "./ExcludeTaxInput/ExcludeTaxInput";
-import AmountInput from "./AmountInput/AmountInput";
-import { formName } from "./formName";
+import RateTypeInput, { RateType } from './RateTypeInput/RateTypeInput';
+import ExcludeTaxInput from './ExcludeTaxInput/ExcludeTaxInput';
+import AmountInput from './AmountInput/AmountInput';
+import { formName } from './formName';
+import { numberWithSpaces } from '../../utils/format';
 
 const taxPercent = 13;
 
@@ -41,9 +42,9 @@ const SalaryForm = ({ handleSubmit, rateType = formDataDefaults.rateType, exclud
       </>}
       {isMonthlyRateType && amount > 0 && <Row>
         <Alert className='mt-4 p-4' variant='warning'><>
-          <p><b>{salary} ₽</b> сотрудник будет получать на руки</p>
-          <p><b>{taxValue} ₽</b> НДФЛ, 13% от оклада</p>
-          <p className='mb-0'><b>{employeeCost} ₽</b> за сотрудника в месяц</p></>
+          <p><b>{numberWithSpaces(salary)} ₽</b> сотрудник будет получать на руки</p>
+          <p><b>{numberWithSpaces(taxValue)} ₽</b> НДФЛ, 13% от оклада</p>
+          <p className='mb-0'><b>{numberWithSpaces(employeeCost)} ₽</b> за сотрудника в месяц</p></>
         </Alert>
       </Row>}
     </Form>

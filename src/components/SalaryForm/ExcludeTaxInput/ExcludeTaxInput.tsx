@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { Form, Row } from "react-bootstrap";
+import { Form, Row } from 'react-bootstrap';
 import './ExcludeTaxInput.sass';
-import { WrappedFieldProps } from "redux-form/lib/Field";
-import PropTypes from "prop-types";
+import { WrappedFieldProps } from 'redux-form/lib/Field';
 
 const ExcludeTaxInput = ({ input: { value, onChange } }: WrappedFieldProps) => {
   return (
-    <Form.Group as={Row} className='mb-0 ml-2'>
+    <Form.Group as={Row} className='mb-0' style={{ marginLeft: '1.2rem' }}>
       <Form.Label className='exclude-tax__label small pl-0 pr-0' column xs='auto' htmlFor='exclude-tax'>
         <span className={'exclude-tax__label-off' + (!value ? ' active' : '')}>Указать с НДФЛ</span>
         <Form.Check
@@ -21,13 +20,6 @@ const ExcludeTaxInput = ({ input: { value, onChange } }: WrappedFieldProps) => {
       </Form.Label>
     </Form.Group>
   );
-};
-
-ExcludeTaxInput.propTypes = {
-  input: PropTypes.shape({
-    value: PropTypes.bool,
-    onChange: PropTypes.func.isRequired
-  })
 };
 
 export default ExcludeTaxInput;

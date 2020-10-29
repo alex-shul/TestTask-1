@@ -1,8 +1,11 @@
 @import './styles/var'
 
-$theme-colors: ("primary": $color-primary)
+$theme-colors: ('primary': $color-primary)
 
 @import '~bootstrap/scss/bootstrap'
+
+input:focus
+  box-shadow: none !important
 
 input[type='radio'],
 input[type='checkbox'],
@@ -25,6 +28,7 @@ input[type='checkbox'],
 .form-label,
 .form-check-label
   font-weight: 700
+  cursor: pointer
 
 input[type='radio']:before
   width: .8rem
@@ -41,11 +45,11 @@ input[type='radio']:before
   z-index: 1
 
 input[type='radio']:after
-  width: .5rem
-  height: .5rem
-  border-radius: .25rem
-  top: .15rem
-  left: .15rem
+  width: .4rem
+  height: .4rem
+  border-radius: .2rem
+  top: .2rem
+  left: .2rem
   position: absolute
   background-color: transparent
   content: ''
@@ -66,9 +70,20 @@ input[type='radio']:checked:after
     color: $color-font
 
 .custom-switch
+  .custom-control-input:focus ~ .custom-control-label::before
+    box-shadow: none !important
+
   .custom-control-input:checked ~ .custom-control-label::before
     border-color: #F5A534
     background-color: #F5A534
+
+  .custom-control-input:not(:checked) ~ .custom-control-label
+    &::before
+      border-color: $color-grey
+      background-color: $color-grey
+    &::after
+      border-color: white
+      background-color: white
 
 .tooltip
   top: .4rem !important
@@ -90,7 +105,8 @@ input[type='radio']:checked:after
     font-weight: 700
     font-size: .8rem
     border-radius: 0 !important
-    padding: 1rem .4rem
+    padding: 1rem
+    text-align: left
 
 .alert
   border-radius: 0 !important
